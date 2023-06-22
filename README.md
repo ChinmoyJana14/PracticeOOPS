@@ -1,2 +1,2635 @@
 # PracticeOOPS
-Learning and Practice OOPS from scratch with .NET
+#Learning and Practice OOPS from scratch with .NET
+Day 2:
+
+using System;
+
+using System.Collections.Generic;
+
+using System.Text;
+
+ 
+
+namespace IntroductionToCSharp
+
+{
+
+    class Program
+
+    {
+
+
+ 
+
+        static void Main()
+
+        {
+
+            Console.WriteLine("Hello");
+
+            Console.WriteLine("Plz enter your name");
+
+            String Username = Console.ReadLine();
+
+ 
+
+            Console.WriteLine("Plz enter your last name");
+
+            String LastName = Console.ReadLine();
+
+ 
+
+           Console.WriteLine("Welcome " + Username);
+
+            Console.WriteLine("Welcome {0} {1}", Username,LastName);
+
+ 
+
+        }
+
+    }
+
+}
+
+ 
+
+Day 5:
+
+using System;
+
+using System.Collections.Generic;
+
+using System.Text;
+
+ 
+
+namespace IntroductionToCSharp
+
+{
+
+    class Program
+
+    {
+
+        static void Main()
+
+        {
+
+            int number = 15;
+
+            int num = 10;
+
+            bool isNum = num == 10 ? true : false;
+
+            bool isNumber = true;
+
+            if (number == 10)
+
+            {
+
+                isNumber = true;
+
+            }
+
+            else
+
+            {
+
+                isNumber = false;
+
+            }
+
+            Console.WriteLine("number==10 is {0}", isNumber);
+
+            Console.WriteLine("number==10 is {0}", isNum);
+
+ 
+
+        }
+
+    }
+
+}
+
+Day 6:
+
+using System;
+
+using System.Collections.Generic;
+
+using System.Text;
+
+ 
+
+namespace IntroductionToCSharp
+
+{
+
+    class Program
+
+    {
+
+        static void Main()
+
+        {
+
+            int? TcketsOnSale = null;
+
+            bool? AreYouMajor = null;
+
+ 
+
+            int AvailableTckets;
+
+ 
+
+            if(TcketsOnSale==null)
+
+            {
+
+                AvailableTckets = 0;
+
+            }
+
+            else
+
+            {
+
+                AvailableTckets = TcketsOnSale.Value;
+
+            }
+
+            Console.WriteLine("Available Tickets {0}", AvailableTckets);
+
+ 
+
+            int AvTickets = TcketsOnSale ?? 0;// returns the value of its left-hand operand if it isn't null; otherwise, it evaluates the right-hand operand
+
+            Console.WriteLine("Available Tickets {0}", AvTickets);
+
+ 
+
+        }
+
+    }
+
+}
+
+Day 7:
+
+using System;
+
+using System.Collections.Generic;
+
+using System.Text;
+
+ 
+
+namespace IntroductionToCSharp
+
+{
+
+    class Program
+
+    {
+
+        static void Main()
+
+        {
+
+            int a = 100;
+
+            float b = a;
+
+            Console.WriteLine(b);
+
+ 
+
+            float c = 123.34F;
+
+            int d = (int)c;
+
+            int e = Convert.ToInt32(c);
+
+            Console.WriteLine(d);
+
+            Console.WriteLine(e);
+
+ 
+
+            float f= 12311111111111111111.34F;
+
+            int g = (int)f;
+
+            int h = Convert.ToInt32(g);
+
+            Console.WriteLine(g);
+
+            Console.WriteLine(h);
+
+ 
+
+            string s = "100";
+
+            int i = int.Parse(s);
+
+            Console.WriteLine(i);
+
+ 
+
+            string st = "100ST";
+
+            int j = 0;
+
+            bool isConversionSuccessfull = int.TryParse(st, out j);
+
+            if (isConversionSuccessfull)
+
+            {
+
+
+
+                Console.WriteLine(j);
+
+            }
+
+            else
+
+            {
+
+                Console.WriteLine("Please enter valid no");
+
+            }
+
+        }
+
+    }
+
+}
+
+Day 8:
+
+using System;
+
+using System.Collections.Generic;
+
+using System.Text;
+
+ 
+
+namespace IntroductionToCSharp
+
+{
+
+    class Program
+
+    {
+
+        static void Main()
+
+        {
+
+            int[] evenNo = new int[3];
+
+            evenNo[0] = 0;
+
+            evenNo[1] = 1;
+
+            evenNo[2] = 3;
+
+            evenNo[3] = 5;
+
+            Console.WriteLine(evenNo[2]);
+
+        }
+
+    }
+
+}
+
+Day 11:
+
+using System;
+
+using System.Collections.Generic;
+
+using System.Text;
+
+ 
+
+namespace IntroductionToCSharp
+
+{
+
+    class Program
+
+    {
+
+        static void Main()
+
+        {
+
+            Console.WriteLine("Enter a no");
+
+ 
+
+            int n = Convert.ToInt32(Console.ReadLine());
+
+ 
+
+            switch (n)
+
+            {
+
+                case 10:
+
+                case 20:
+
+                case 30:
+
+                    Console.WriteLine("Your no is { }",n);
+
+                    break;
+
+                default:
+
+                    Console.WriteLine("Wrong No");
+
+                    break;
+
+            };
+
+        }
+
+    }
+
+}
+
+Day 12:
+
+using System;
+
+using System.Collections.Generic;
+
+using System.Text;
+
+ 
+
+namespace IntroductionToCSharp
+
+{
+
+    class Program
+
+    {
+
+        static void Main()
+
+        {
+
+            int TotalCost=0;
+
+            Begin:
+
+            Console.WriteLine("Small Coffee 1 - Medium Coffee 2 - Large Coffee 3");
+
+ 
+
+            int n = int.Parse(Console.ReadLine());
+
+ 
+
+            switch (n)
+
+            {
+
+                case 1:
+
+                    TotalCost += 1;
+
+                    break;
+
+                case 2:
+
+                    TotalCost += 2;
+
+                    break;
+
+                case 3:
+
+                    TotalCost += 3;
+
+                    break;
+
+                default:
+
+                    Console.WriteLine("No Coffee for your choice {0}- Please try again...",n);
+
+                    goto Begin;
+
+            }
+
+            Console.WriteLine("Bill amount is {0}", TotalCost);
+
+ 
+
+            Middle:
+
+            Console.WriteLine("Do you want anoter coffee? Yes or No");
+
+            string s = Console.ReadLine();
+
+ 
+
+            switch (s.ToUpper())
+
+            {
+
+                case "YES":
+
+                    goto Begin;                 
+
+                case "NO":
+
+                    break;
+
+                default:
+
+                    Console.WriteLine("Wrong choice {0}- Please try again...", s);
+
+                    goto Middle;                 
+
+            }
+
+            Console.WriteLine("Thank you for shopping with me! Bill amount is {0}", TotalCost);
+
+ 
+
+        }
+
+    }
+
+}
+
+Day14:
+
+using System;
+
+using System.Collections.Generic;
+
+using System.Text;
+
+ 
+
+namespace IntroductionToCSharp
+
+{
+
+    class Program
+
+    {
+
+        static void Main()
+
+        {
+
+            string userChoice = string.Empty;
+
+            do
+
+            {
+
+                Console.WriteLine("Please enter your target");
+
+                int n = int.Parse(Console.ReadLine());
+
+ 
+
+                int start = 0;
+
+                while (start <= n)
+
+                {
+
+                    Console.Write(start + " ");
+
+                    start = start + 2;
+
+                }
+
+                do
+
+                {
+
+                    Console.WriteLine("Do you want to continue - Yes or No");
+
+ 
+
+                    userChoice = Console.ReadLine().ToUpper();
+
+                    if (userChoice != "YES" && userChoice != "NO")
+
+                    {
+
+                        Console.WriteLine("Please enter a valid choice Yes or No");
+
+                    }
+
+                } while (userChoice != "YES" && userChoice != "NO");
+
+ 
+
+            } while (userChoice == "YES");
+
+        }
+
+    }
+
+}
+
+Day14 2:
+
+using System;
+
+using System.Collections.Generic;
+
+using System.Text;
+
+ 
+
+namespace IntroductionToCSharp
+
+{
+
+    class Program
+
+    {
+
+        static void Main()
+
+        {
+
+            int TotalCost = 0;
+
+            int userChoice;
+
+            string userAgainChoice = string.Empty;
+
+ 
+
+            do
+
+            {
+
+                do
+
+                {
+
+                    Console.WriteLine("Small Coffee 1 - Medium Coffee 2 - Large Coffee 3");
+
+                                     
+
+                     
+
+                    while (!int.TryParse(Console.ReadLine().Trim(), out userChoice))
+
+                    {
+
+                        if (userChoice==0)
+
+                        {
+
+                            Console.WriteLine("Please provide a number from above");
+
+                        }
+
+                    }
+
+ 
+
+                    switch (userChoice)
+
+                    {
+
+                        case 1:
+
+                            TotalCost += 1;
+
+                            break;
+
+                        case 2:
+
+                            TotalCost += 2;
+
+                            break;
+
+                        case 3:
+
+                            TotalCost += 3;
+
+                            break;
+
+                        default:
+
+                            Console.WriteLine("No Coffee for your choice {0}- Please try again...", userChoice);
+
+                            break;
+
+                    }
+
+                } while (userChoice != 1 && userChoice != 2 && userChoice != 3);
+
+ 
+
+                Console.WriteLine("Bill amount is {0}", TotalCost);
+
+ 
+
+                do
+
+                {
+
+                Console.WriteLine("Do you want anoter coffee? Yes or No");
+
+                userAgainChoice = Console.ReadLine().ToUpper();
+
+               
+
+                    if (userAgainChoice != "YES" && userAgainChoice != "NO")
+
+                    {
+
+                       Console.WriteLine("Wrong choice {0}- Please try again...", userAgainChoice);
+
+                    }
+
+                } while (userAgainChoice != "YES" && userAgainChoice != "NO");
+
+ 
+
+            } while (userAgainChoice != "NO");
+
+ 
+
+            Console.WriteLine("Thank you for shopping with me! Bill amount is {0}", TotalCost);
+
+ 
+
+ 
+
+ 
+
+        }
+
+    }
+
+}
+
+Day 15:
+
+using System;
+
+ 
+
+class Program
+
+{
+
+    static void Main()
+
+    {
+
+        int[] arr = new int[4];
+
+ 
+
+        arr[0] = 100;
+
+        arr[1] = 101;
+
+        arr[2] = 102;
+
+ 
+
+        int i = 0;
+
+        while (i < arr.Length)
+
+        {
+
+            Console.WriteLine(arr[i]);
+
+            i++;
+
+        }
+
+ 
+
+        for (int j = 0; j < arr.Length; j++)
+
+        {
+
+            Console.WriteLine(arr[j]);
+
+        }
+
+ 
+
+        foreach(int k in arr)
+
+        {
+
+            Console.WriteLine(k);
+
+        }
+
+ 
+
+        for(int l = 0; l <= 20; l++)
+
+        {
+
+            if(l % 2 == 1)           
+
+                continue;
+
+                Console.WriteLine(l);           
+
+            }
+
+}
+
+}
+
+day 16:
+
+using System;
+
+ 
+
+class Program
+
+{
+
+    static void Main()
+
+    {
+
+        int[] a = new int[3];
+
+ 
+
+        a[0] = 100;
+
+        a[1] = 101;
+
+        a[2] = 102;
+
+        Program program = new Program();
+
+        program.printArray(a);
+
+        Program.printArray2(a);
+
+    }
+
+    public void printArray(int[] arr)
+
+    {
+
+        foreach (int k in arr)
+
+        {
+
+            Console.WriteLine(k);
+
+        }
+
+    }
+
+ 
+
+    public  static void printArray2(int[] arr)
+
+    {
+
+        foreach (int k in arr)
+
+        {
+
+            Console.WriteLine(k);
+
+        }
+
+    }
+
+ 
+
+}
+
+Day 17
+
+using System;
+
+ 
+
+class Program
+
+{
+
+    public static void Main()
+
+    {
+
+        int i = 0;
+
+ 
+
+        Program.simpleMethod(i);
+
+ 
+
+        Console.Write(i);
+
+    }
+
+ 
+
+    public static void simpleMethod(int j)
+
+    {
+
+        j = 101;
+
+ 
+
+    }
+
+}
+
+using System;
+
+//----------------------------------
+
+class Program
+
+{
+
+    public static void Main()
+
+    {
+
+        int i = 0;
+
+ 
+
+        Program.simpleMethod(ref i);
+
+ 
+
+        Console.Write(i);
+
+    }
+
+ 
+
+    public static void simpleMethod(ref int j)
+
+    {
+
+        j = 101;
+
+ 
+
+    }
+
+}
+
+//-------------------------------
+
+using System;
+
+ 
+
+class Program
+
+{
+
+    public static void Main()
+
+    {
+
+        int[] Numbers = new int[3];
+
+        Numbers[0] = 100;
+
+        Numbers[1] = 101;
+
+        Numbers[2] = 102;
+
+ 
+
+        Program.paramsMethod();
+
+        Program.paramsMethod(Numbers);
+
+        Program.paramsMethod(1,2,3,6,7,70,12);
+
+    }
+
+ 
+
+    public static void paramsMethod(params int[] num)
+
+    {
+
+        Console.WriteLine("There are {0} numbers in the array", num.Length);
+
+        foreach(int i in num)
+
+        {
+
+            Console.WriteLine(i);
+
+        }
+
+    }
+
+}
+
+Day18
+
+using System;
+
+using PATA=ProjectA.TeamA;
+
+using PATB=ProjectA.TeamB;
+
+class Program
+
+{
+
+    public static void Main()
+
+    {
+
+        //ProjectA.TeamA.ClassA.Print();
+
+        //ProjectA.TeamB.ClassA.Print();
+
+        PATA.ClassA.Print();
+
+        PATB.ClassA.Print();
+
+ 
+
+    }
+
+}
+
+namespace ProjectA
+
+{
+
+    namespace TeamA
+
+    {
+
+        class ClassA
+
+        {
+
+            public static void Print()
+
+            {
+
+                Console.WriteLine("My Team is TeamA");
+
+            }
+
+        }
+
+      
+
+    }
+
+}
+
+ 
+
+namespace ProjectA
+
+{
+
+    namespace TeamB
+
+    {
+
+        class ClassA
+
+        {
+
+            public static void Print()
+
+            {
+
+                Console.WriteLine("My Team is TeamB");
+
+            }
+
+        }
+
+    }
+
+}
+
+Day 19:
+
+Constructor does not have return type and same name as class, can take parameters
+
+Destructor used to call automatically to clean resources by garabage collector in C#, no return type and no parameters
+
+Default constructor does not have any parameters
+
+Paramiterized Constructor: Used to create instance of a class by passing the required parameter of the class
+	
+using System;
+
+class Customer
+
+{
+
+    string _firstName;
+
+    string _lastName;
+
+ 
+
+    public Customer() :
+
+        this("No FirstName","No LastName")
+
+    {
+
+ 
+
+    }
+
+    public Customer(string FirstName, string LastName)
+
+    {
+
+        this._firstName = FirstName;
+
+        this._lastName = LastName;
+
+    }
+
+ 
+
+    public void printFullName()
+
+    {
+
+        Console.WriteLine("Full name is {0}", this._firstName + " " + this._lastName);
+
+    }
+
+ 
+
+    ~Customer()
+
+    {
+
+ 
+
+    }
+
+ 
+
+    public static void Main()
+
+    {
+
+        Customer custormer1 = new Customer("Chinmoy","Jana");
+
+        Customer custormer2 = new Customer();
+
+        custormer1.printFullName();
+
+        custormer2.printFullName();
+
+    }
+
+}
+
+ public class LandingPage {
+	
+	WebDriver driver;
+	WebDriverWait wait;
+	
+	public LandingPage(WebDriver driver, WebDriverWait wait) {
+		this.driver=driver;
+		this.wait = wait;
+	}
+ }
+ public class HomePageTest extends Base{
+	 LandingPage l;
+	 public WebDriver driver;
+	 public WebDriverWait wait;
+	 public void LogInTry(){
+		 l = new LandingPage(driver,wait);//passing same object instances while creating the object of the parent class
+	 }
+ }
+
+Day20:
+
+by default access modifier is private
+
+static constructor called only once no matter how many times being called and it is called before instance constructor
+
+using System;
+
+ 
+
+public class Circle
+
+{
+
+    public static float _PI;
+
+    int _Radius;
+
+ 
+
+    static Circle()
+
+    {
+
+        Console.WriteLine("Static Constructor Called");
+
+        Circle._PI = 3.141F;
+
+    }
+
+ 
+
+    public Circle(int Radus)
+
+    {
+
+        Console.WriteLine("Instance Constructor Called");
+
+        this._Radius = Radus;
+
+    }
+
+ 
+
+    public float CalculateArea()
+
+    {
+
+        return Circle._PI * this._Radius * this._Radius;
+
+    }
+
+}
+
+ 
+
+public class Program
+
+{
+
+    public static void Main()
+
+    {
+
+        Circle circle1 = new Circle(5);
+
+        float Area1 = circle1.CalculateArea();
+
+        Console.WriteLine("{0}",Area1);
+
+ 
+
+        Circle circle2 = new Circle(10);
+
+        float Area2 = circle2.CalculateArea();
+
+        Console.WriteLine("{0}", Area2);
+
+ 
+
+        Console.WriteLine(Circle._PI);
+
+    }
+
+}
+
+Day 21:
+
+One class cannot inheritate from multiple base class but multiple class can be inheritate from one base class
+
+using System;
+
+ 
+
+public class Employee
+
+{
+
+    public string FirstName;
+
+    public string LastName;
+
+    public string Email;
+
+   
+
+    public void PrintEmployeeDetails()
+
+    {
+
+        Console.WriteLine(FirstName +" "+ LastName);
+
+        Console.WriteLine(Email);
+
+        Console.WriteLine("No such Property");
+
+    }
+
+}
+
+ 
+
+public class FullTimeEmployee : Employee
+
+{
+
+    public float YearlySalary;
+
+}
+
+ 
+
+public class  PartTimeEmployee : Employee
+
+{
+
+    public float HourlySalary;
+
+ 
+
+}
+
+ 
+
+public class A : FullTimeEmployee
+
+{
+
+    public string Designation;
+
+}
+
+ 
+
+public class Program
+
+{
+
+    public static void Main()
+
+    {
+
+        FullTimeEmployee fullTimeEmployee = new FullTimeEmployee();
+
+        fullTimeEmployee.FirstName = "Priya";
+
+        fullTimeEmployee.LastName = "Paul";
+
+        fullTimeEmployee.Email = ppaul@gmail.com;
+
+        fullTimeEmployee.YearlySalary = 85000.00F;
+
+        fullTimeEmployee.PrintEmployeeDetails();
+
+ 
+
+        PartTimeEmployee partTimeEmployee = new PartTimeEmployee();
+
+        partTimeEmployee.FirstName = "Pagli";
+
+        partTimeEmployee.LastName = "Paul";
+
+        partTimeEmployee.Email = pgpaul@hotmail.com;
+
+        partTimeEmployee.HourlySalary = 50.00F;
+
+        partTimeEmployee.PrintEmployeeDetails();
+
+    }
+
+}
+
+//---------------------------------------------------
+
+//Parent class contructor called first
+
+//Using base keyword in child class contructor, child class can choose base class contructor
+
+using System;
+
+ 
+
+public class ParentClass
+
+{
+
+    public ParentClass()
+
+    {
+
+        Console.WriteLine("Parent Class Contructor Called");
+
+    }
+
+ 
+
+    public ParentClass(string Message)
+
+    {
+
+        Console.WriteLine("Parent Class Contructor 2 Called");
+
+    }
+
+}
+
+ 
+
+public class ChildClass : ParentClass
+
+{
+
+    public ChildClass() : base("Controlling Parent Class Constructor")
+
+    {
+
+        Console.WriteLine("Child Class Constructor called");
+
+    }
+
+}
+
+ 
+
+public class Program
+
+{
+
+    public static void Main()
+
+    {
+
+        ChildClass childClass = new ChildClass();
+
+    }
+
+}
+
+ 
+
+//Day 22:
+
+//Instance of clild class object prefers child class method over parent class method, that means inherited method hides.
+//New keyword used to make it intentional hide
+//base keyword used in child class properties to use base class properties
+
+using System;
+ public class Employee
+{
+   public string FirstName;
+    public string LastName;
+    public void printName()
+    {
+        Console.WriteLine(FirstName + " " + LastName + "- Parent Class");
+    }
+}
+
+ public class PartTimeEployee : Employee
+    {
+    public new void printName()
+    {
+        base.printName(); // Call the parent class method
+        Console.WriteLine(FirstName + " " + LastName + "- Child Class");
+    }
+}
+
+ public class FullTimeEmployee : Employee
+{
+    public int Salary;
+    public new void printName()
+    {
+       Console.WriteLine(FirstName + " " + LastName + "- Child Class");
+    }
+}
+
+  public class Program
+    {
+        public static void Main()
+        {
+        PartTimeEployee PTE = new PartTimeEployee();
+        PTE.FirstName = "Chinmoy";
+        PTE.LastName = "Jana";
+        PTE.printName();
+        FullTimeEmployee FTE = new FullTimeEmployee();
+       FTE.FirstName = "Sanu";
+        FTE.LastName = "Jana";
+        FTE.printName();
+        ((Employee)FTE).printName(); // Call the parent class method
+        //FullTimeEmployee FTE1 = new Employee(); Not possible
+        Employee FTE2 = new FullTimeEmployee(); // Base class reference variable can point to child class object
+        FTE.FirstName = "Priya";
+        FTE.LastName = "Jana";
+        FTE.Salary = 1000;
+        //FTE2.Salary = 1000; Cannot access child object
+        FTE2.printName(); // Call the parent class method
+       }
+    }
+
+ 
+
+Day23
+
+//Polymorphism: Invoke derived class method using parent class reference variable at runtime
+//Run-Time Polymorphism:
+using System;
+public class Employee
+{
+    public string FN = "FN";
+    public string LN = "LN";
+    public virtual void printName()
+    {
+        Console.WriteLine(FN + " " + LN);
+    }
+}
+
+public class PartTimeEmployee : Employee
+{
+    public override void printName()
+    {
+       Console.WriteLine(FN + " " + LN + "PartTimeEmployee");
+    }
+}
+
+public class FullTimeEmployee : Employee
+{
+    public override void printName()
+    {
+        Console.WriteLine(FN + " " + LN + "FullTimeEmployee");
+   }
+}
+
+public class TemporaryTimeEmployee : Employee
+{
+    public new void printName()//New keyword used to make it intentional hide
+    {
+        Console.WriteLine(FN + " " + LN + "TemporaryTimeEmployee");
+    }
+}
+
+public class Program
+{
+    public static void Main()
+    {
+        Employee[] employees = new Employee[4];
+        employees[0] = new PartTimeEmployee();
+        employees[1] = new FullTimeEmployee();
+        employees[2] = new TemporaryTimeEmployee();// Will not call clild class as it's intance of parent class
+        employees[3] = new Employee();
+        foreach( Employee e in employees)
+        {
+            e.printName();
+        }
+        Employee[] employees2 = new TemporaryTimeEmployee[1];
+        employees2[0] = new TemporaryTimeEmployee();// Will not call clild class
+        foreach (Employee e in employees2)
+        {
+            e.printName();
+        }
+
+    }
+
+}
+
+Day 24: Method Hiding vs Method Overriding
+
+using System;
+public class BaseClass
+{
+    public virtual void print()
+    {
+        Console.WriteLine("I am the Base Class");
+    }
+}
+
+public class DerivedClassOverride : BaseClass
+{
+    public override void print()
+    {
+        Console.WriteLine("I am the Child Class - override");
+    }
+}
+ 
+public class DerivedClassHiding : BaseClass
+{
+    public new void print()
+    {
+        Console.WriteLine("I am the Child Class - hiding");
+    }
+}
+
+public class Program
+{
+    public static void Main()
+    {
+        BaseClass baseClassForOverride = new DerivedClassOverride();
+        baseClassForOverride.print();
+        BaseClass baseClassForHiding = new DerivedClassHiding();
+        baseClassForHiding.print();
+    }
+}
+
+//Day25
+
+//Overloading: Based on Params(no, datatype), name of method
+////Compile-Time Polymorphism:
+//Compile error if try to overload by only changing retun type or params modifier
+
+using System;
+
+ 
+
+public class Program {
+
+    public static void Main()
+
+    {
+
+        add(1,2);
+
+    }
+
+ 
+
+    public static void add(int a, int b)
+
+    {
+
+        Console.WriteLine("Addition is {0}", a+b);
+
+    }
+
+ 
+
+    public static void add(int a, int b, int c)
+
+    {
+
+        Console.WriteLine("Addition is {0}", a + b);
+
+    }
+
+    public static void add(int a, float b)
+
+    {
+
+        Console.WriteLine("Addition is {0}", a + b);
+
+    }
+
+    public static void add(int a, int b, out int sum)
+
+    {
+
+        sum = a + b;
+
+        Console.WriteLine("Addition is {0}", sum);
+
+    }
+
+    public static int add(int a, int b)
+
+    {
+
+        Console.WriteLine("Addition is {0}", a + b);
+
+        return a + b;
+
+    }
+
+    public static void add(int a, int b, params int[] list)
+
+    {
+
+        list[0] = a;
+
+        list[1] = b;
+
+        Console.WriteLine("Addition is {0}", a + b);
+
+    }
+
+ 
+
+    public static void add(int a, int b, int[] list)
+
+    {
+
+        list[0] = a;
+
+        list[1] = b;
+
+        Console.WriteLine("Addition is {0}", a + b);
+
+    }
+
+}
+
+//Day 25: Why Properties?
+
+//To maintain business rules for the class objects
+
+//Example: ID Should not be -ve, Name should be not null and Passmark cannot be changed
+
+using System;
+
+ 
+
+public class Student
+
+{
+
+    public string Name;
+
+    public int ID;
+
+    public int Passmark = 35;
+
+}
+
+ 
+
+public class Program {
+
+    public static void Main()
+
+    {
+
+        Student C1 = new Student();
+
+        C1.ID = -12;
+
+        C1.Name = null;
+
+        C1.Passmark = 40;
+
+ 
+
+        Console.WriteLine("ID is {0}, Name is {1}, PassMark is {2}", C1.ID, C1.Name, C1.Passmark);
+
+    }
+
+}
+
+// To achieve the business rules, we make properties Private first - this is encapsulation
+
+using System;
+
+ 
+
+public class Student
+
+{
+
+    private string _name;
+
+    private int _iD;
+
+    private int _passmark = 35;
+
+ 
+
+    public int GetPassMark()
+
+    {
+
+        return this._passmark;
+
+    }
+
+    public void SetID(int ID)
+
+    {
+
+        if (ID < 0)
+
+        {
+
+            throw new Exception("ID cannot be negative");
+
+        }
+
+        else
+
+            this._iD = ID;
+
+    }
+
+ 
+
+    public int GetID()
+
+        {
+
+            return this._iD;
+
+        }
+
+   
+
+ 
+
+    public void SetName(string Name)
+
+    {
+
+        if (string.IsNullOrEmpty(Name))
+
+        {
+
+            throw new Exception("Name cannot be Null or Empy");
+
+        }
+
+        else
+
+            this._name = Name;
+
+    }
+
+ 
+
+    public string GetName()
+
+    {
+
+      return  string.IsNullOrEmpty(this._name) ? "No Name" : this._name;
+
+    }
+
+}
+
+ 
+
+public class Program {
+
+    public static void Main()
+
+    {
+
+        Student C1 = new Student();
+
+        //C1.SetID(-11);
+
+        C1.SetID(101);
+
+        //C1.SetName("");
+
+        Console.WriteLine("ID is {0}, Name is {1}, Passmark is {2}", C1.GetID(), C1.GetName(), C1.GetPassMark());
+
+    }
+
+}
+
+ 
+
+//Get Set Accessors for doing encapsulation
+
+// If no additional logic is there, we can use auto implemented get set method
+
+using System;
+
+ 
+
+public class Student
+
+{
+
+    private string _name;
+
+    private int _iD;
+
+    private int _passmark = 35;
+
+ 
+
+    public int Passmark
+
+    {
+
+        get
+
+        {
+
+            return this._passmark;
+
+        }
+
+    }
+
+    public int ID
+
+    {
+
+        set
+
+        {
+
+            if (value < 0)
+
+            {
+
+                throw new Exception("ID cannot be negative");
+
+            }
+
+            this._iD = value;
+
+        }
+
+        get
+
+        {
+
+            return this._iD;
+
+        }           
+
+    } 
+
+    public string Name
+
+    {
+
+        set
+
+        {
+
+            if (string.IsNullOrEmpty(value))
+
+            {
+
+                throw new Exception("Name cannot be Null or Emty");
+
+            }
+
+            this._name = value;
+
+        }
+
+        get
+
+        {
+
+            return string.IsNullOrEmpty(this._name) ? "No Value Provided" : this._name;
+
+        }
+
+    }
+
+}
+
+public class Program {
+
+    public static void Main()
+
+    {
+
+        Student C1 = new Student();
+
+        //C1.SetID(-11);
+
+        C1.ID = 101;
+
+        //C1.Name ="";
+
+        C1.Name = "Priya";
+
+        Console.WriteLine("ID is {0}, Name is {1}, Passmark is {2}", C1.ID, C1.Name, C1.Passmark);
+
+    }
+
+}
+
+Day 28:
+
+Structs
+
+using System;
+
+ 
+
+public struct Customer
+
+{
+
+    private int _id;
+
+    private string _name;
+
+ 
+
+    public int ID
+
+    {
+
+        set { this._id = value; }
+
+        get { return this._id; }
+
+    }
+
+ 
+
+    public string Name { get => _name; set => _name = value; }
+
+ 
+
+    public Customer(int ID, string Name)
+
+    {
+
+        this._id = ID;
+
+        this._name = Name;
+
+    }
+
+ 
+
+    public void PrintCustomer()
+
+    {
+
+        Console.WriteLine("ID is {0} and Name is {1}",this._id,this._name);
+
+    }
+
+}
+
+ 
+
+public class Program
+
+{
+
+    public static void Main()
+
+    {
+
+        Customer C1 = new Customer(100,"Priya");
+
+        C1.PrintCustomer();
+
+ 
+
+        Customer C2 = new Customer();
+
+        C2.ID = 101;
+
+        C2.Name = "Pagli";
+
+        C2.PrintCustomer();
+
+ 
+
+        Customer C3 = new Customer
+
+        {
+
+            ID = 102,
+
+            Name = "Peter"
+
+        };
+
+        C3.PrintCustomer();
+
+ 
+
+    }
+
+}
+
+Day 29: //Structs Vs Class
+
+Object reference variable store in Stack but object stores in Heap. Value type variable stores in Stack
+
+Class are store in stack but structs are in Heap.
+
+The object of a reference variable destroyed by garbage collector not after the scope
+
+Assigning one object variable to another, does not copy the object in memory rather pointing to the same loaction in Heap.
+
+Changing the value of the variable of one object will change for another as it points to same location.
+
+using System;
+
+ 
+
+public class Customer
+
+{
+
+public int ID { get; set; }
+
+public string Name { get; set; }
+
+}
+
+ 
+
+public class Program
+
+{
+
+    public static void Main()
+
+    {
+
+        int i = 100;
+
+ 
+
+        int j = i;
+
+        j = j + 2;
+
+ 
+
+        Console.WriteLine("i={0} and j={1}", i, j);
+
+ 
+
+        Customer C1 = new Customer();
+
+        C1.ID = i;
+
+        C1.Name = "Priya";
+
+ 
+
+        Customer C2 = C1;
+
+        C2.Name = "Pgli";
+
+ 
+
+        Console.WriteLine("C1.Name = {0} and C2.Name = {1}", C1.Name, C2.Name);
+
+    }
+
+}
+
+// Class can have destructor but Structor can't have
+
+using System;
+
+public class Customer
+
+{
+
+public int ID { get; set; }
+
+public string Name { get; set; }
+
+    ~Customer()
+
+    {
+
+ 
+
+    }
+
+}
+
+public class Program
+
+{
+
+    public static void Main()
+
+    {
+
+ 
+
+    }
+
+}
+
+ 
+
+using System;
+
+public struct Customer
+
+{
+
+public int ID { get; set; }
+
+public string Name { get; set; }
+
+    ~Customer()//Error
+
+    {
+
+ 
+
+    }
+
+}
+
+public class Program
+
+{
+
+    public static void Main()
+
+    {
+
+ 
+
+    }
+
+}
+
+// Class can have explicit parameters less contructor but struct can't
+
+using System;
+
+public struct Customer
+
+{
+
+public int ID { get; set; }
+
+public string Name { get; set; }
+
+    public Customer()//Error
+
+    {
+
+    }
+
+}
+
+public class Program
+
+{
+
+    public static void Main()
+
+    {
+
+ 
+
+    }
+
+}
+
+// Struct can't inheritate from another class but both can inheritate from same Interface
+
+//Class or struct cannot inheritate from anoter struct, like sealed class.
+
+using System;
+
+public sealed class Customer // Cannot inheritate
+
+{
+
+public int ID { get; set; }
+
+public string Name { get; set; }
+
+    public Customer()
+
+    {
+
+    }
+
+}
+
+public class Program  : Customer// Error
+
+{
+
+    public static void Main()
+
+    {
+
+ 
+
+    }
+
+}
+
+Day 30: Interface
+
+//Contains Properties, Method, Delegates but no implementation unlike Class
+
+// Interface members are public by default
+
+//Interface cannot have fields
+
+//Class needs to do the implementation if Inherites a Interface
+
+//Class can inheritate from multiple Interfaces
+
+//Class cannot inheritate from multiple classes
+
+// if a class inherits from a Interface and the interface again inherits from anoter Interface then this class have to implement all the properties of all the interfaces
+
+//Cannot create instances of Interface but an interface reference variable can point to an derived class object
+
+using System;
+
+ 
+
+interface ICustomer1
+
+{
+
+    void Print1();
+
+}
+
+ 
+
+interface ICustomer2 : ICustomer1
+
+{
+
+    void Print2();
+
+}
+
+ 
+
+public class Customer : ICustomer2
+
+{
+
+    public void Print1()
+
+    {
+
+        Console.WriteLine("Print1");
+
+    }
+
+ 
+
+    public void Print2()
+
+    {
+
+        Console.WriteLine("Print2");
+
+    }
+
+}
+
+ 
+
+public class Program
+
+{
+
+    public static void Main()
+
+    {
+
+        //ICustomer1 customer1 = new ICustomer1();//Cannot create instances of Interface
+
+        ICustomer1 customer = new Customer();
+
+        customer.Print1();
+
+        //customer.Print2();//Parent Interface does not contain the definition of the function
+
+        ICustomer2 customer2 = new Customer();
+
+        customer2.Print1();
+
+        customer2.Print2();
+
+ 
+
+    }
+
+}
+
+Day 31:
+
+//Explicit interface implementation can be done only via interface reference variable not class reference variable
+
+// Access modifier are not allowed for explicit interface implemented interface members
+
+// To make a default interface method, impplement that method normally and explicit others
+
+using System;
+
+ 
+
+interface I1
+
+{
+
+    void InterfaceMethod();
+
+}
+
+ 
+
+interface I2
+
+{
+
+    void InterfaceMethod();
+
+ 
+
+}
+
+ 
+
+interface I3
+
+{
+
+    void InterfaceMethod();
+
+ 
+
+}
+
+ 
+
+public class Program : I1, I2, I3
+
+{
+
+    void I2.InterfaceMethod()
+
+    {
+
+        Console.WriteLine("Interface 2 Method");
+
+    }
+
+ 
+
+    void I1.InterfaceMethod()
+
+    {
+
+        Console.WriteLine("Interface 1 Method");
+
+    }
+
+    public void InterfaceMethod()
+
+    {
+
+        Console.WriteLine("Interface 3 Method");
+
+    }
+
+ 
+
+    public static void Main()
+
+    {
+
+        Program p1 = new Program();
+
+        ((I2)p1).InterfaceMethod();
+
+        ((I1)p1).InterfaceMethod();
+
+ 
+
+        I2 i2 = new Program();
+
+        i2.InterfaceMethod();
+
+ 
+
+        p1.InterfaceMethod();
+
+    }
+
+}
+
+Day 32:
+
+// Abstract members cannot have implementation in the abstract class
+
+//Abstract class have abstract members also can have non abstract members
+
+//Cannot instantiate abstract class
+
+//If a class inherited from a abstract class either needs to implement the properties or mark himself as abstract
+
+//Abstract class can only used as a Base class but sealed class cannot be used as base class
+
+using System;
+
+ 
+
+public abstract class Customer
+
+{
+
+    public abstract void Print1();
+
+ 
+
+    public void Print2()
+
+    {
+
+        Console.WriteLine("Print2");
+
+    }
+
+}
+
+ 
+
+public class Program : Customer
+
+{
+
+    public override void Print1()
+
+    {
+
+        Console.Write("Print 1");
+
+    }
+
+ 
+
+    public static void Main() {
+
+        Program p = new Program();
+
+        p.Print1();
+
+        p.Print2();
+
+      Customer c = new Program();
+
+        c.Print1();
+
+        c.Print2();
+
+     
+
+    }
+
+ 
+
+}
+
+Day 33:
+
+//Abstract Class VS Interface
+
+//Abstract class can have implementation of some of his members but Interface cannot have any implementation
+
+//Abstract class members can have access modifier but Interface members are always public
+
+//Abstract can have fields but interface cannot have fields
+
+//Abstract class can inherited from another abstract class/interface/non abstract class but interface can only inheritate from anoter interface
+
+//Class can inheritate from multiple interfaces but class cannot inheritate from multiple classes
+
+Array vs ArrayList: for dynamic size
+	int[] arr = new int[5];
+		arr[0]=1;
+		arr[1]=2;
+		
+	int[] arr = {1,2};
+	
+	ArrayList<String> arr = new ArrayList<String>();
+	arr.add("abc");
+	arr.add("test");
+	arr.add("peter");
+
+ 
+MultiDimensional Array: Collection of arrays
+	
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
